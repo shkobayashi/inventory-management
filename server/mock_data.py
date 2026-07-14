@@ -35,5 +35,16 @@ recent_transactions = load_json_file('transactions.json')
 # Load purchase orders
 purchase_orders = load_json_file('purchase_orders.json')
 
+# Restocking lead time (in days) by inventory category. Not present in any JSON
+# data file since no supplier/lead-time data exists yet - derived here instead.
+CATEGORY_LEAD_TIME_DAYS = {
+    'Circuit Boards': 14,
+    'Sensors': 5,
+    'Actuators': 10,
+    'Controllers': 7,
+    'Power Supplies': 12,
+}
+DEFAULT_LEAD_TIME_DAYS = 10
+
 # All data is now loaded from JSON files in the data/ directory
 # This allows for easier maintenance and updates of the sample data
